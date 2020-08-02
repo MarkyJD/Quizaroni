@@ -1,38 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,300;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,300;1,600&display=swap");
+
+/* 
+
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Raleway', sans-serif; 
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  /* background-color: antiquewhite; */
+}
+
 .App {
+  height: 100vh;
+  width: 60em;
+  padding: 1em;
+  margin: auto;
+  overflow: hidden;
+}
+
+.main-container {
+  padding: 0.5em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.main-container header {
+  display: flex;
+  align-items: center;
+  /* height: 15%; */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container header h1 {
+  font-family: "Montserrat Subrayada", sans-serif;
+  color: rgb(75, 58, 4);
+  font-size: 2.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container .question {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  /* height: 20%; */
+  text-align: center;
+  padding: 1em;
+  position: relative;
+}
+
+.main-container .question h6 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.main-container .question p {
+  line-height: 1.3em;
+  font-weight: 400;
+  font-size: 1.8rem;
+  padding: 1em;
+}
+
+.main-container .answers {
+  /* height: 45%; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.answers div {
+  margin: 1em 0;
+  min-width: 30em;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1em 3em;
+  cursor: pointer;
+}
+
+.answers div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.main-container > footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 10%; */
+}
+
+footer button {
+  border: none;
+  border-radius: 10px;
+  min-width: 15em;
+  padding: 1rem 1.5rem;
   color: white;
+  background-color: rgba(38, 58, 77, 1);
+  font-size: large;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+footer button:hover {
+  background-color: rgba(121, 90, 6, 0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1050px) {
+  .App {
+    width: 40em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .answers div {
+    min-width: 20em;
+  }
+
+  footer button {
+    min-width: 10em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    width: 30em;
+  }
+
+  .main-container .question p {
+    line-height: 1.3em;
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+
+  .answers div {
+    min-width: 15em;
+    font-size: 0.9rem;
+    margin: 0.7em;
+  }
+
+  footer button {
+    min-width: 6em;
+    font-size: small;
+    font-weight: bold;
   }
 }
